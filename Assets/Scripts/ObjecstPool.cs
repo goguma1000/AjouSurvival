@@ -16,6 +16,8 @@ public class ObjecstPool : MonoBehaviour
     private Stack<GameObject> EnemyA = new Stack<GameObject>();
     private Stack<GameObject> EnemyAp = new Stack<GameObject>();
     private Stack<GameObject> google = new Stack<GameObject>();
+    private Stack<GameObject> thunder = new Stack<GameObject>();
+    private Stack<GameObject> book = new Stack<GameObject>();
     // Start is called before the first frame update
     private GameObject CreateObject(GameObject prefab)
     {
@@ -36,11 +38,13 @@ public class ObjecstPool : MonoBehaviour
             EnemyAp.Push(CreateObject(EnemyPrefabs[5]));
         }
     }
-    private void MakeWeaponPool(int initCount)
+    private void MakeWeaponPool(int key,int initCount)
     {
+        Stack<GameObject> target;
+        WeaponPoolDic.TryGetValue(key, out target);
         for (int i = 0; i < initCount; i++)
         {
-            google.Push(CreateObject(WeaponPrefabs[0]));
+            target.Push(CreateObject(WeaponPrefabs[key]));
         }
     }
     private void Awake()
@@ -58,8 +62,12 @@ public class ObjecstPool : MonoBehaviour
         enemyPoolDic.Add(4, EnemyA);
         enemyPoolDic.Add(5, EnemyAp);
         WeaponPoolDic.Add(0, google);
+        WeaponPoolDic.Add(1, thunder);
+        WeaponPoolDic.Add(2, book);
         MakeEnemyPool(300);
-        MakeWeaponPool(100);
+        MakeWeaponPool(0,100);
+        MakeWeaponPool(1, 30);
+        MakeWeaponPool(2, 6);
 
     }
     void Start()

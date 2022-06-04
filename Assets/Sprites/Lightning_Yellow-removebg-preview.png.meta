@@ -1,0 +1,504 @@
+fileFormatVersion: 2
+guid: c2211c997eb085341871daf70e622fc6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6836525016972370749
+    second: Lightning_Yellow-removebg-preview_5
+  - first:
+      213: -4088246616490453129
+    second: Lightning_Yellow-removebg-preview_6
+  - first:
+      213: -9086589532854885498
+    second: Lightning_Yellow-removebg-preview_7
+  - first:
+      213: 647079331009021955
+    second: Lightning_Yellow-removebg-preview_8
+  - first:
+      213: -1252465874584622019
+    second: Lightning_Yellow-removebg-preview_9
+  - first:
+      213: 6628075700323405499
+    second: Lightning_Yellow-removebg-preview_10
+  - first:
+      213: -1246635774583995020
+    second: Lightning_Yellow-removebg-preview_11
+  - first:
+      213: 2447622045215164416
+    second: Lightning_Yellow-removebg-preview_12
+  - first:
+      213: 7630039585229623086
+    second: Lightning_Yellow-removebg-preview_13
+  - first:
+      213: -6642079455629231741
+    second: Lightning_Yellow-removebg-preview_14
+  - first:
+      213: 6628708450245589813
+    second: Lightning_Yellow-removebg-preview_15
+  - first:
+      213: 887462532753763917
+    second: Lightning_Yellow-removebg-preview_0
+  - first:
+      213: -3785290585820973953
+    second: Lightning_Yellow-removebg-preview_1
+  - first:
+      213: 1207348006549386927
+    second: Lightning_Yellow-removebg-preview_2
+  - first:
+      213: -1769522884934547832
+    second: Lightning_Yellow-removebg-preview_3
+  - first:
+      213: -1810352234978551737
+    second: Lightning_Yellow-removebg-preview_4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 185
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc5a41f7b8cf11a0800000000000000
+      internalID: -6836525016972370749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 150
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777d4eddc51a347c0800000000000000
+      internalID: -4088246616490453129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 120
+        width: 78
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683e66276f2f5e180800000000000000
+      internalID: -9086589532854885498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 90
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3084a422933eaf800800000000000000
+      internalID: 647079331009021955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 60
+        width: 80
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3ca5144ce85e9ee0800000000000000
+      internalID: -1252465874584622019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 30
+        width: 80
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbecc2e7bb7abfb50800000000000000
+      internalID: 6628075700323405499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 21
+        width: 80
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47580a33e5f03bee0800000000000000
+      internalID: -1246635774583995020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 46
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00807753843b7f120800000000000000
+      internalID: 2447622045215164416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 46
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fc7cbb39853e960800000000000000
+      internalID: 7630039585229623086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 30
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 389bc452de792d3a0800000000000000
+      internalID: -6642079455629231741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 30
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bb4801737edfb50800000000000000
+      internalID: 6628708450245589813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 185
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ea148b876e05c00800000000000000
+      internalID: 887462532753763917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 185
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74b28c7442f77bc0800000000000000
+      internalID: -3785290585820973953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 186
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa6f6aa7d9c51c010800000000000000
+      internalID: 1207348006549386927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 186
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8864d8dbf446177e0800000000000000
+      internalID: -1769522884934547832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lightning_Yellow-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 186
+        width: 62
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748d4c3eb3650e6e0800000000000000
+      internalID: -1810352234978551737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
