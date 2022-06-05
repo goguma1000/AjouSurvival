@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private float maxEXP = 100;
     private float nowEXP = 0;
     public Image expBar;
+    public GameObject levelUpCanvas;
     private void Awake()
     {
         if (instance == null)
@@ -69,11 +70,12 @@ public class GameManager : MonoBehaviour
         nowEXP += exp;
         expBar.fillAmount = nowEXP / maxEXP;
         if(Mathf.Floor(nowEXP/maxEXP) == 1)
-        {
+        {   
+
             nowlevel += 1;
             nowEXP = nowEXP % maxEXP;
-            //choice item
-            maxEXP *= 1.2f;
+            levelUpCanvas.SetActive(true);
+            maxEXP *= 1.3f;
             expBar.fillAmount = nowEXP / maxEXP;
         }
     }

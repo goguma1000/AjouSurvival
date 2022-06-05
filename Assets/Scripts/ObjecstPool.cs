@@ -7,8 +7,10 @@ public class ObjecstPool : MonoBehaviour
     public static ObjecstPool instance;
     public GameObject[] EnemyPrefabs;
     public GameObject[] WeaponPrefabs;
+    public GameObject[] ItemPrefabs;
     public Dictionary<int, Stack<GameObject>> enemyPoolDic = new Dictionary<int, Stack<GameObject>>();
     public Dictionary<int, Stack<GameObject>> WeaponPoolDic = new Dictionary<int, Stack<GameObject>>();
+    public Dictionary<int, Stack<GameObject>> DropItemPoolDic = new Dictionary<int, Stack<GameObject>>();
     private Stack<GameObject> EnemyC = new Stack<GameObject>();
     private Stack<GameObject> EnemyCp = new Stack<GameObject>();
     private Stack<GameObject> EnemyB = new Stack<GameObject>();
@@ -18,6 +20,8 @@ public class ObjecstPool : MonoBehaviour
     private Stack<GameObject> google = new Stack<GameObject>();
     private Stack<GameObject> thunder = new Stack<GameObject>();
     private Stack<GameObject> book = new Stack<GameObject>();
+    private Stack<GameObject> exp = new Stack<GameObject>();
+    private Stack<GameObject> magnet = new Stack<GameObject>();
     // Start is called before the first frame update
     private GameObject CreateObject(GameObject prefab)
     {
@@ -47,6 +51,17 @@ public class ObjecstPool : MonoBehaviour
             target.Push(CreateObject(WeaponPrefabs[key]));
         }
     }
+
+    private void MakeItemPool(int key, int initCount)
+    {
+        Stack<GameObject> target;
+        DropItemPoolDic.TryGetValue(key, out target);
+        for (int i = 0; i < initCount; i++)
+        {
+            target.Push(CreateObject(ItemPrefabs[key]));
+        }
+    }
+
     private void Awake()
     {   
         if (instance == null)
@@ -61,13 +76,22 @@ public class ObjecstPool : MonoBehaviour
         enemyPoolDic.Add(3, EnemyBp);
         enemyPoolDic.Add(4, EnemyA);
         enemyPoolDic.Add(5, EnemyAp);
+
         WeaponPoolDic.Add(0, google);
         WeaponPoolDic.Add(1, thunder);
         WeaponPoolDic.Add(2, book);
+
+        DropItemPoolDic.Add(0, exp);
+        DropItemPoolDic.Add(1, magnet);
         MakeEnemyPool(300);
+
         MakeWeaponPool(0,100);
         MakeWeaponPool(1, 30);
         MakeWeaponPool(2, 6);
+
+        MakeItemPool(0, 3000);
+        MakeItemPool(1, 3000);
+        
 
     }
     void Start()
