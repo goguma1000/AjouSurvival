@@ -7,6 +7,7 @@ public class PlayerAnimator : MonoBehaviour
     Animator anim;
     public float horizontal;
     public float vertical;
+    public bool isRun = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         anim.SetFloat("Horizontal", horizontal);
         anim.SetFloat("Vertical", vertical);
+        anim.SetBool("isMove",isRun);
     }
 
 

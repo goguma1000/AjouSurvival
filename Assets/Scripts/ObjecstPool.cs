@@ -19,6 +19,7 @@ public class ObjecstPool : MonoBehaviour
     private Stack<GameObject> EnemyAp = new Stack<GameObject>();
     private Stack<GameObject> google = new Stack<GameObject>();
     private Stack<GameObject> thunder = new Stack<GameObject>();
+    private Stack<GameObject> axe = new Stack<GameObject>();
     private Stack<GameObject> book = new Stack<GameObject>();
     private Stack<GameObject> exp = new Stack<GameObject>();
     private Stack<GameObject> magnet = new Stack<GameObject>();
@@ -80,6 +81,7 @@ public class ObjecstPool : MonoBehaviour
         WeaponPoolDic.Add(0, google);
         WeaponPoolDic.Add(1, thunder);
         WeaponPoolDic.Add(2, book);
+        WeaponPoolDic.Add(3, axe);
 
         DropItemPoolDic.Add(0, exp);
         DropItemPoolDic.Add(1, magnet);
@@ -88,6 +90,7 @@ public class ObjecstPool : MonoBehaviour
         MakeWeaponPool(0,100);
         MakeWeaponPool(1, 30);
         MakeWeaponPool(2, 6);
+        MakeWeaponPool(3, 13);
 
         MakeItemPool(0, 3000);
         MakeItemPool(1, 3000);

@@ -28,7 +28,7 @@ public class Shooter : MonoBehaviour
     {
         if (key == 0)
         {
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < GameManager.instance.googleBulletNum; i++)
             {
                 GameObject temp = Spawn();
                 if (temp != null)
@@ -45,16 +45,19 @@ public class Shooter : MonoBehaviour
         }
         else if(key == 1)
         {
-            GameObject temp = Spawn();
-            temp.SetActive(true);
-            yield return new WaitForSeconds(shootDelay);
+            for (int i = 0; i < GameManager.instance.thunderNum; i++)
+            {
+                GameObject temp = Spawn();
+                temp.SetActive(true);
+                yield return new WaitForSeconds(shootDelay);
+            }
             
         }
         else if(key == 2)
         {
             angle = 0;
-            anglestep = 360 / 6;
-            for (int i = 0; i < 6; i++)
+            anglestep = 360 / GameManager.instance.bookNum;
+            for (int i = 0; i < GameManager.instance.bookNum; i++)
             {
                 Vector3 spawnPos = new Vector3(radius * Mathf.Cos(angle * Mathf.Deg2Rad), radius * Mathf.Sin(angle * Mathf.Deg2Rad),transform.position.z);
                 GameObject temp = Spawn();
@@ -62,6 +65,28 @@ public class Shooter : MonoBehaviour
                 temp.transform.SetParent(transform);
                 temp.transform.localPosition = spawnPos;
                 angle += anglestep;
+            }
+            yield return new WaitForSeconds(3);
+        }
+        else if(key == 3)
+        {
+            sign = 1;
+            int addx = 0;
+            for (int i = 0; i < GameManager.instance.axeNum; i++)
+            {
+                GameObject temp = Spawn();
+                if (temp != null)
+                {
+                    AxeMove com = temp.GetComponent<AxeMove>();
+                    com.sign = sign;
+                    com.b = (i * sign) + addx;
+                    temp.transform.SetParent(null);
+                    temp.transform.position = (transform.position + Vector3.up);
+                    temp.SetActive(true);
+                    addx = (i * sign ) + addx;
+                    sign *= -1;
+                    yield return new WaitForSeconds(shootDelay);
+                }
             }
             yield return new WaitForSeconds(3);
         }

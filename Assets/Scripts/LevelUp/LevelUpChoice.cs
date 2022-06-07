@@ -19,13 +19,13 @@ public class LevelUpChoice : MonoBehaviour
 
     private void Awake()
     {
-        itemText.Add(0, "item1\nitem1");
-        itemText.Add(1, "item2\nitem2");
-        itemText.Add(2, "item3\nitem3");
-        itemText.Add(3, "item4\nitem4");
+        itemText.Add(0, "발사체 개수 2개 증가");
+        itemText.Add(1, "번개 개수 1개 증가");
+        itemText.Add(2, "책 개수 1개 증가");
+        itemText.Add(3, "도끼 개수 1개 증가");
         itemText.Add(4, "item5\nitem5");
         itemText.Add(5, "item6\nitem6");
-        itemText.Add(6, "item7\nitem7");
+        itemText.Add(6, "체력 20% 회복");
     }
     public void ChoiceSlot(int slotnum)
     {
