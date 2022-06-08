@@ -7,7 +7,7 @@ public class ExpItem : MonoBehaviour
     public bool goToPlayer = false;
     private GameObject target;
     private float speed = 10f;
-    private int exp = 10;
+    public int exp = 10;
 
     private void OnEnable()
     {

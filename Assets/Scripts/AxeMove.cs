@@ -11,7 +11,8 @@ public class AxeMove : MonoBehaviour
     private float startX;
     private Vector3 pos;
     private void OnEnable()
-    {   
+    {
+        StopCoroutine(PushPool());
         x = 0;
         y = 0;
         preX = 0;
@@ -30,14 +31,20 @@ public class AxeMove : MonoBehaviour
         preY = y;
         transform.Rotate(Vector3.forward, 5);
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyController>().Damaged();
+        }
+    }
     IEnumerator PushPool()
     {
         yield return new WaitForSeconds(3);
         Stack<GameObject> targetPool;
         ObjecstPool.instance.WeaponPoolDic.TryGetValue(key, out targetPool);
-        gameObject.SetActive(false);
         gameObject.transform.SetParent(ObjecstPool.instance.transform);
         targetPool.Push(this.gameObject);
+        gameObject.SetActive(false);
     }
 }

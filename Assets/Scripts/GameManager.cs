@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject[] shooters;
     [SerializeField] private Image[] slotImages;
     [SerializeField] private Sprite[] itemImages;
+    [SerializeField] private Text[] levelTexts;
+    private Dictionary<int, Text> levelDic = new Dictionary<int, Text>();
+    private Text temp;
     private float maxEXP = 100;
     private float nowEXP = 0;
     private float timer = 0;
@@ -25,6 +28,8 @@ public class GameManager : MonoBehaviour
     public int thunderNum = 1;
     public int bookNum = 1;
     public int axeNum = 1;
+    public float PenCool = 3;
+    public float erasePercent = 3;
     private void Awake()
     {
         if (instance == null)
@@ -40,7 +45,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemLevel = new int[] { 1, 1, 1, 0, 1, 0 };
+        itemLevel = new int[] { 0, 0, 0, 0, 1, 0 };
+        levelDic.Add(4, levelTexts[0]);
     }
 
     // Update is called once per frame
@@ -70,6 +76,7 @@ public class GameManager : MonoBehaviour
                 if(slotImages[i].sprite == null)
                 {
                     slotImages[i].sprite = itemImages[itemNum];
+                    levelDic.Add(itemNum, levelTexts[i]);
                     break;
                 }
             }
@@ -92,16 +99,22 @@ public class GameManager : MonoBehaviour
             {
                 axeNum += 1;
             }
-            else if (itemNum == 4) // 
+            else if (itemNum == 4) // Pen
             {
-                Debug.Log("Level up item 4");
+                PenCool *= 0.85f;
             }
-            else if (itemNum == 5) //
+            else if (itemNum == 5) // Eraser
             {
-                Debug.Log("Level up item 5");
+                erasePercent *= 1.1f; 
             }
         }
         itemLevel[itemNum] += 1;
+        levelDic.TryGetValue(itemNum, out temp);
+        temp.text = "" + itemLevel[itemNum];
+        if(itemLevel[itemNum] == 6)
+        {
+            maxLevelItem.Add(itemNum);
+        }
     }
 
     public void updateEXP(float exp)

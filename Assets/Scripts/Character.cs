@@ -22,11 +22,8 @@ public class Character : MonoBehaviour
     {
         if (currentHp <= 0) { return; }
 
-        currentHp += heal;
-        if (currentHp > maxHp)
-        {
-            currentHp = maxHp;
-        }
+        currentHp = Mathf.Clamp(currentHp + heal, 0 , maxHp);
+        hpBar.SetState(currentHp, maxHp);
         
     }
 }

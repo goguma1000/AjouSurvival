@@ -6,22 +6,40 @@ public class EnemyController : MonoBehaviour
 {
     private GameObject temp;
     private GameObject target;
+    private GameObject fallowTarget;
     [SerializeField]
     private int key;
     [SerializeField] 
     private float speed;
+    [SerializeField]
+    private float health;
+    private float nowHealth;
+    [SerializeField] 
+    int damage = 1;
     // Start is called before the first frame update
+    private void OnEnable()
+    {
+        nowHealth = health;
+    }
     void Start()
     {
-        target = GameObject.Find("Player");
+        target = GameObject.Find("player");
+        fallowTarget = target.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position =Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
+        transform.position =Vector3.MoveTowards(transform.position, fallowTarget.transform.position, speed * Time.deltaTime);
     }
-
+    public void Damaged()
+    {
+        nowHealth -= 1;
+        if (nowHealth == 0)
+        {
+            PushPool();
+        }
+    }
     public void PushPool()
     {
         DropItem();
@@ -29,25 +47,40 @@ public class EnemyController : MonoBehaviour
         ObjecstPool.instance.enemyPoolDic.TryGetValue(key, out targetPool);
         gameObject.SetActive(false);
         gameObject.transform.SetParent(ObjecstPool.instance.transform);
-        targetPool.Push(this.gameObject);
+        targetPool.Push(this.gameObject);   
     }
 
     private void DropItem()
     {
         Stack<GameObject> targetPool;
-        int num = Random.Range(0, 11);
-        if (num < 9)
+        int num = Random.Range(0, 100);
+        if (num < 90)//9
         {
             ObjecstPool.instance.DropItemPoolDic.TryGetValue(0, out targetPool);
             if (targetPool.Count > 0)
             {
                 temp = targetPool.Pop();
             }
+            if(key == 0 || key == 1) 
+            {
+                temp.GetComponent<ExpItem>().exp = 10;
+                temp.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else if(key == 2 || key == 3) 
+            {
+                temp.GetComponent<ExpItem>().exp = 15;
+                temp.GetComponent<SpriteRenderer>().color = Color.green;
+            }
+            else if (key == 4 || key == 5)
+            {
+                temp.GetComponent<ExpItem>().exp = 20;
+                temp.GetComponent<SpriteRenderer>().color = Color.red;
+            }
             temp.SetActive(true);
             temp.transform.SetParent(null);
             temp.transform.position = transform.position;
         }
-        else if(num == 9)
+        else if(89< num && num < 95)
         {
             ObjecstPool.instance.DropItemPoolDic.TryGetValue(1, out targetPool);
             temp = targetPool.Pop();
@@ -59,12 +92,34 @@ public class EnemyController : MonoBehaviour
             temp.transform.SetParent(null);
             temp.transform.position = transform.position;
         }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        else if(94 < num && num < 100)
         {
-            Debug.Log("collision with player");
+            ObjecstPool.instance.DropItemPoolDic.TryGetValue(2, out targetPool);
+            temp = targetPool.Pop();
+            if (targetPool.Count > 0)
+            {
+                GameObject temp = targetPool.Pop();
+            }
+            temp.SetActive(true);
+            temp.transform.SetParent(null);
+            temp.transform.position = transform.position;
         }
+    }
+   
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject == target)
+        {
+            Attack();
+        }
+    }
+    Character targetCharacter;
+    private void Attack()
+    {
+        if (targetCharacter == null)
+        {
+            targetCharacter = target.GetComponent<Character>();
+        }
+        targetCharacter.TakeDamage(damage);
     }
 }

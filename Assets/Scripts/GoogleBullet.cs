@@ -64,7 +64,7 @@ public class GoogleBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyController>().PushPool();
+            collision.gameObject.GetComponent<EnemyController>().Damaged();
             this.PushPool();
         }
     }

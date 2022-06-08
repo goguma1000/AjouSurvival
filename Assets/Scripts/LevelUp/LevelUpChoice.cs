@@ -10,11 +10,15 @@ public class LevelUpChoice : MonoBehaviour
     public Sprite[] items;
     private List<int> randomNums = new List<int>();
     private Dictionary<int, string> itemText = new Dictionary<int, string>();
+    private GameObject player;
+    private Character character;
     //enable >> 타임스케일 = 0 >> 스롯 별 이미지 및 데이터 부여 
     private void OnEnable()
     {
         SetSlotInfo();
         Time.timeScale = 0;
+        player = GameObject.Find("player");
+        character = player.GetComponent<Character>();
     }
 
     private void Awake()
@@ -23,8 +27,8 @@ public class LevelUpChoice : MonoBehaviour
         itemText.Add(1, "번개 개수 1개 증가");
         itemText.Add(2, "책 개수 1개 증가");
         itemText.Add(3, "도끼 개수 1개 증가");
-        itemText.Add(4, "item5\nitem5");
-        itemText.Add(5, "item6\nitem6");
+        itemText.Add(4, "쿨타임 15%감소");
+        itemText.Add(5, "발동확률 10%증가");
         itemText.Add(6, "체력 20% 회복");
     }
     public void ChoiceSlot(int slotnum)
@@ -39,7 +43,10 @@ public class LevelUpChoice : MonoBehaviour
         int targetItem = randomNums[slotnum -1];
         if (targetItem == 6)
         {
-            Debug.Log("Health up");
+            if (character != null)
+            {
+                character.Heal(Mathf.FloorToInt(character.maxHp * 0.2f));
+            }
         }
         else GameManager.instance.ItemLevelUp(targetItem);
        
@@ -55,32 +62,69 @@ public class LevelUpChoice : MonoBehaviour
         {
             canAdd = true;
             temp = Random.Range(0, items.Length);
-            if(GameManager.instance.maxLevelItem.Count > 0 && GameManager.instance.maxLevelItem != null)
+            if (GameManager.instance.maxLevelItem.Count == 6)
             {
-                bool go = true;
-                foreach(int i in GameManager.instance.maxLevelItem)
+                randomNums.Add(6);
+                randomNums.Add(6);
+                randomNums.Add(6);
+                for (int j = 0; j < randomNums.Count; j++)
                 {
-                    if (i == temp) go = false; 
+                    slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
+                    string itemtext;
+                    itemText.TryGetValue(randomNums[j], out itemtext);
+                    slotTexts[j].GetComponent<Text>().text = itemtext;
                 }
-                if (go == false) continue;
-            }
+                return;
 
-            if (randomNums.Count == 0) randomNums.Add(temp);
+            }
+            else if (GameManager.instance.maxLevelItem.Count == 5)
+            {
+                int num = 15;
+                randomNums.Add(6);
+                randomNums.Add(6);
+                foreach (int i in GameManager.instance.maxLevelItem)
+                {
+                    num -= i;
+                }
+                randomNums.Add(num);
+                for (int j = 0; j < randomNums.Count; j++)
+                {
+                    slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
+                    string itemtext;
+                    itemText.TryGetValue(randomNums[j], out itemtext);
+                    slotTexts[j].GetComponent<Text>().text = itemtext;
+                }
+                return;
+            }
             else
             {
-                foreach (int i in randomNums)
+                if (GameManager.instance.maxLevelItem.Count > 0 && GameManager.instance.maxLevelItem != null)
                 {
-                    if (i == temp) canAdd = false;
+                    bool go = true;
+                    foreach (int i in GameManager.instance.maxLevelItem)
+                    {
+                        if (i == temp) go = false;
+                    }
+                    if (go == false) continue;
                 }
-                if (canAdd) randomNums.Add(temp);
-            }
 
-            for(int j = 0; j < randomNums.Count; j++)
-            {
-                slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
-                string itemtext;
-                itemText.TryGetValue(randomNums[j], out itemtext);
-                slotTexts[j].GetComponent<Text>().text = itemtext; 
+                if (randomNums.Count == 0) randomNums.Add(temp);
+                else
+                {
+                    foreach (int i in randomNums)
+                    {
+                        if (i == temp) canAdd = false;
+                    }
+                    if (canAdd) randomNums.Add(temp);
+                }
+
+                for (int j = 0; j < randomNums.Count; j++)
+                {
+                    slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
+                    string itemtext;
+                    itemText.TryGetValue(randomNums[j], out itemtext);
+                    slotTexts[j].GetComponent<Text>().text = itemtext;
+                }
             }
         }
         

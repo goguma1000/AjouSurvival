@@ -21,8 +21,10 @@ public class ObjecstPool : MonoBehaviour
     private Stack<GameObject> thunder = new Stack<GameObject>();
     private Stack<GameObject> axe = new Stack<GameObject>();
     private Stack<GameObject> book = new Stack<GameObject>();
+    private Stack<GameObject> pen = new Stack<GameObject>();
     private Stack<GameObject> exp = new Stack<GameObject>();
     private Stack<GameObject> magnet = new Stack<GameObject>();
+    private Stack<GameObject> potion = new Stack<GameObject>();
     // Start is called before the first frame update
     private GameObject CreateObject(GameObject prefab)
     {
@@ -82,18 +84,23 @@ public class ObjecstPool : MonoBehaviour
         WeaponPoolDic.Add(1, thunder);
         WeaponPoolDic.Add(2, book);
         WeaponPoolDic.Add(3, axe);
+        WeaponPoolDic.Add(4, pen);
 
         DropItemPoolDic.Add(0, exp);
         DropItemPoolDic.Add(1, magnet);
+        DropItemPoolDic.Add(2, potion);
+
         MakeEnemyPool(300);
 
         MakeWeaponPool(0,100);
         MakeWeaponPool(1, 30);
         MakeWeaponPool(2, 6);
         MakeWeaponPool(3, 13);
+        MakeWeaponPool(4, 100);
 
         MakeItemPool(0, 3000);
         MakeItemPool(1, 3000);
+        MakeItemPool(2, 3000);
         
 
     }

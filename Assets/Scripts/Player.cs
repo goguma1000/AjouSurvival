@@ -9,12 +9,13 @@ public class Player : MonoBehaviour
     [SerializeField] float speed = 3f;
     [SerializeField]
     SpriteRenderer playerRenderer;
-    [SerializeField]
-    Animator anim;
+    public float lastHorizontalVector;
+    [SerializeField] Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
         moveV = new Vector3();
+        lastHorizontalVector = 1f;
     }
 
     // Update is called once per frame
@@ -34,6 +35,14 @@ public class Player : MonoBehaviour
             playerRenderer.flipX = true;
             anim.SetBool("isMove", true);
         }
+
+        if (moveV.x != 0)
+        {
+            lastHorizontalVector = moveV.x;
+        }
+       
+       
+
         anim.SetFloat("Vertical", moveV.y);
         transform.position += new Vector3(moveV.x * speed * Time.deltaTime, moveV.y * speed * Time.deltaTime, 0);
                
