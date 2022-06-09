@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     SpriteRenderer playerRenderer;
     public float lastHorizontalVector;
     [SerializeField] Animator anim;
+    public ParticleSystem blood;
     // Start is called before the first frame update
     void Awake()
     {
@@ -46,5 +47,17 @@ public class Player : MonoBehaviour
         anim.SetFloat("Vertical", moveV.y);
         transform.position += new Vector3(moveV.x * speed * Time.deltaTime, moveV.y * speed * Time.deltaTime, 0);
                
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (!blood.isPlaying)
+            {
+                blood.Play();
+            }
+            
+        }
     }
 } 

@@ -90,7 +90,7 @@ public class ObjecstPool : MonoBehaviour
         DropItemPoolDic.Add(1, magnet);
         DropItemPoolDic.Add(2, potion);
 
-        MakeEnemyPool(300);
+        MakeEnemyPool(500);
 
         MakeWeaponPool(0,100);
         MakeWeaponPool(1, 30);
@@ -98,9 +98,9 @@ public class ObjecstPool : MonoBehaviour
         MakeWeaponPool(3, 13);
         MakeWeaponPool(4, 100);
 
-        MakeItemPool(0, 3000);
-        MakeItemPool(1, 3000);
-        MakeItemPool(2, 3000);
+        MakeItemPool(0, 5000);
+        MakeItemPool(1, 1000);
+        MakeItemPool(2, 1000);
         
 
     }

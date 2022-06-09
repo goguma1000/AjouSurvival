@@ -7,12 +7,15 @@ public class thunder : MonoBehaviour
     GameObject enemy;
     bool isAttack = false;
     private int key = 1;
+    public AudioSource audio;
     private void OnEnable()
     {
+        audio.Stop();
         isAttack = false;
         enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
     // Update is called once per frame
+    
     void Update()
     {
         if (!isAttack && enemy != null)
@@ -31,9 +34,8 @@ public class thunder : MonoBehaviour
     IEnumerator attack()
     {
         transform.position = enemy.transform.position;
-        /*yield return new WaitForSeconds(0.3f);
-        transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().enabled = false;*/
-        yield return new WaitForSeconds(1f);
+        audio.Play();
+        yield return new WaitForSeconds(1.3f);
         PushPool();
     }
 

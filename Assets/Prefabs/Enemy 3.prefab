@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -1483089991909428614}
   - component: {fileID: -4616081524407027173}
   - component: {fileID: 3841879861753144569}
+  - component: {fileID: -932939997116059540}
   m_Layer: 6
   m_Name: Enemy 3
   m_TagString: Enemy
@@ -119,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: 3
-  speed: 1.5
+  speed: 1.8
   health: 5
   damage: 12
 --- !u!58 &3841879861753144569
@@ -138,3 +139,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.085
+--- !u!95 &-932939997116059540
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902487254246173281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2a4404c525e110243ac4a349889e9148, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

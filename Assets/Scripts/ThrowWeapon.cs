@@ -8,9 +8,11 @@ public class ThrowWeapon : MonoBehaviour
     [SerializeField] int key = 4;
     Player playerMove;
     private bool canShoot = true;
+    private AudioSource audio;
     private void Awake()
     {
         playerMove = GetComponentInParent<Player>();
+        audio = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -23,10 +25,14 @@ public class ThrowWeapon : MonoBehaviour
     }
 
     IEnumerator Shoot()
-    {
+    {   
         yield return new WaitForSeconds(0.02f);
         GameObject temp = Spawn();
         temp.SetActive(true);
+        if(audio.isPlaying == false)
+        {
+            audio.Play();
+        }
         yield return new WaitForSeconds(GameManager.instance.PenCool);
         canShoot = true;
     }

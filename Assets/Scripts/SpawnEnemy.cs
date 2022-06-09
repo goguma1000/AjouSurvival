@@ -19,26 +19,29 @@ public class SpawnEnemy : MonoBehaviour
         StartCoroutine(Spawn());
         StartCoroutine(PhaseChange());
     }
-
-    void Update()
+    
+    public int GetPhase()
     {
-        
+        return phase;
     }
 
     IEnumerator Spawn()
     {
-        for(int i = 0; i < phase; i++)
-        {   
-            if (i >= ObjecstPool.instance.enemyPoolDic.Count) continue;
-            Stack<GameObject> targetPool; 
-            ObjecstPool.instance.enemyPoolDic.TryGetValue(i, out targetPool);
-            if (targetPool.Count > 0)
+        for (int j = 0; j < phase; j++)
+        {
+            for (int i = 0; i < phase; i++)
             {
-                float angle = Random.Range(0, 359);
-                GameObject temp = targetPool.Pop();
-                temp.transform.position = new Vector3(target.transform.position.x + radius * Mathf.Cos(angle), target.transform.position.y + radius * Mathf.Sin(angle), 0);
-                temp.gameObject.SetActive(true);
-                temp.transform.SetParent(null);
+                if (i >= ObjecstPool.instance.enemyPoolDic.Count) continue;
+                Stack<GameObject> targetPool;
+                ObjecstPool.instance.enemyPoolDic.TryGetValue(i, out targetPool);
+                if (targetPool.Count > 0)
+                {
+                    float angle = Random.Range(0, 359);
+                    GameObject temp = targetPool.Pop();
+                    temp.transform.position = new Vector3(target.transform.position.x + radius * Mathf.Cos(angle), target.transform.position.y + radius * Mathf.Sin(angle), 0);
+                    temp.gameObject.SetActive(true);
+                    temp.transform.SetParent(null);
+                }
             }
         }
         yield return new WaitForSeconds(spawnDelay);

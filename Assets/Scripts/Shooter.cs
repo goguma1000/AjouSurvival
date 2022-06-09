@@ -13,10 +13,15 @@ public class Shooter : MonoBehaviour
     float shootDelay = 0.1f;
     private float angle = 0f;
     private float anglestep;
+    private AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
-
         if (canShoot)
         {
             canShoot = false;
@@ -83,6 +88,13 @@ public class Shooter : MonoBehaviour
                     temp.transform.SetParent(null);
                     temp.transform.position = (transform.position + Vector3.up);
                     temp.SetActive(true);
+                    if(audio != null)
+                    {
+                        if(audio.isPlaying == false)
+                        {
+                            audio.Play();
+                        }
+                    }
                     addx = (i * sign ) + addx;
                     sign *= -1;
                     yield return new WaitForSeconds(shootDelay);

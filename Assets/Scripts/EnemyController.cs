@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     private GameObject temp;
     private GameObject target;
     private GameObject fallowTarget;
+    private Animator anim;
     [SerializeField]
     private int key;
     [SerializeField] 
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour
     {
         target = GameObject.Find("player");
         fallowTarget = target.transform.GetChild(0).gameObject;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class EnemyController : MonoBehaviour
     public void Damaged()
     {
         nowHealth -= 1;
+        anim.SetTrigger("isHit");
         if (nowHealth == 0)
         {
             PushPool();

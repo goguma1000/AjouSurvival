@@ -8,10 +8,12 @@ public class EraseAll : MonoBehaviour
     [SerializeField] float deltime;
     bool act = false;
     float timer;
+    public ParticleSystem successEffect;
+    public ParticleSystem failEffect;
     // Start is called before the first frame update
     void Start()
     {
-        rendom = Random.Range(0, 100);
+
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class EraseAll : MonoBehaviour
             timer += Time.deltaTime;
             return;
         }
+        rendom = Random.Range(0, 100);
         timer = 0;
         is_act();
         eraseAll();
@@ -39,7 +42,7 @@ public class EraseAll : MonoBehaviour
     {
         if (act == true)
         {
-            Debug.Log("active");
+            successEffect.Play();
             GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject obj in objs)
             {
@@ -49,7 +52,8 @@ public class EraseAll : MonoBehaviour
         }
         else
         {
-            Debug.Log("fail");
+            failEffect.Play();
         }
+        
     }
 }

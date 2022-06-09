@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
 
         if (currentHp <= 0)
         {
-            
+            GameManager.instance.gameOver = true;
         }
         hpBar.SetState(currentHp, maxHp);
     }
