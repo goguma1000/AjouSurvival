@@ -14,7 +14,6 @@ public class GoogleBullet : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
-        GetComponent<TrailRenderer>().Clear();
         StopCoroutine(destroy());
         GetAngle();
         a = (1 / b) * sign;
@@ -23,6 +22,10 @@ public class GoogleBullet : MonoBehaviour
         y = 0;
         preX = 0;
         preY = 0;
+    }
+    private void OnDisable()
+    {
+        GetComponent<TrailRenderer>().Clear();
     }
     void Start()
     {
@@ -65,7 +68,7 @@ public class GoogleBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyController>().Damaged();
-            this.PushPool();
+            
         }
     }
 
@@ -74,15 +77,14 @@ public class GoogleBullet : MonoBehaviour
         Stack<GameObject> targetPool;
         ObjecstPool.instance.WeaponPoolDic.TryGetValue(key, out targetPool);
         gameObject.SetActive(false);
-        GetComponent<TrailRenderer>().Clear();
-        this.GetComponent<GoogleBullet>().enabled = false;
-        gameObject.transform.SetParent(ObjecstPool.instance.transform);
         targetPool.Push(this.gameObject);
+        gameObject.transform.SetParent(ObjecstPool.instance.transform);
+        this.GetComponent<GoogleBullet>().enabled = false;
     }
 
     IEnumerator destroy()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.4f);
         this.PushPool();
     }
 

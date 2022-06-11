@@ -29,6 +29,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         for (int j = 0; j < phase; j++)
         {
+            j = Mathf.Clamp(j, 0, 6);
             for (int i = 0; i < phase; i++)
             {
                 if (i >= ObjecstPool.instance.enemyPoolDic.Count) continue;

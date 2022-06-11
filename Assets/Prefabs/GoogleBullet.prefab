@@ -124,7 +124,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7966060668944279982}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -200,7 +200,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 0.7058824}
-      key1: {r: 0.28235295, g: 0.5411765, b: 0.9568628, a: 0.7058824}
+      key1: {r: 0.28235295, g: 0.5411765, b: 0.9568628, a: 0.5019608}
       key2: {r: 0.22352943, g: 0.67058825, b: 0.34509805, a: 0}
       key3: {r: 0.98627734, g: 0.7145511, b: 0.10183808, a: 0}
       key4: {r: 0.92549026, g: 0.31764707, b: 0.2627451, a: 0}
