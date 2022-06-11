@@ -44,7 +44,7 @@ public class GoogleBullet : MonoBehaviour
 
     void GetAngle()
     {
-        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 3f, LayerMask.GetMask("Enemy"));
+        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, 4f, LayerMask.GetMask("Enemy"));
         if (col.Length > 0)
         {
             GameObject temp = col[Random.Range(0, col.Length)].gameObject;
@@ -74,6 +74,7 @@ public class GoogleBullet : MonoBehaviour
         Stack<GameObject> targetPool;
         ObjecstPool.instance.WeaponPoolDic.TryGetValue(key, out targetPool);
         gameObject.SetActive(false);
+        GetComponent<TrailRenderer>().Clear();
         this.GetComponent<GoogleBullet>().enabled = false;
         gameObject.transform.SetParent(ObjecstPool.instance.transform);
         targetPool.Push(this.gameObject);

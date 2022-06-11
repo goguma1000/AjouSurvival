@@ -11,7 +11,7 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] 
     private int phase = 1;
 
-    private float spawnDelay = 4f;
+    private float spawnDelay = 3f;
    
 
     void Start()
@@ -27,7 +27,7 @@ public class SpawnEnemy : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < phase; j++)
         {
             for (int i = 0; i < phase; i++)
             {
