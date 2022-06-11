@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
         scoreDic.Add(5, "B+");
         scoreDic.Add(6, "A");
         scoreDic.Add(7, "A");
+        scoreDic.Add(8, "A");
     }
 
     // Update is called once per frame
