@@ -63,25 +63,25 @@ public class EnemyController : MonoBehaviour
             if (targetPool.Count > 0)
             {
                 temp = targetPool.Pop();
+                if (key == 0 || key == 1)
+                {
+                    temp.GetComponent<ExpItem>().exp = 10;
+                    temp.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else if (key == 2 || key == 3)
+                {
+                    temp.GetComponent<ExpItem>().exp = 15;
+                    temp.GetComponent<SpriteRenderer>().color = Color.green;
+                }
+                else if (key == 4 || key == 5)
+                {
+                    temp.GetComponent<ExpItem>().exp = 20;
+                    temp.GetComponent<SpriteRenderer>().color = Color.red;
+                }
+                temp.SetActive(true);
+                temp.transform.SetParent(null);
+                temp.transform.position = transform.position;
             }
-            if(key == 0 || key == 1) 
-            {
-                temp.GetComponent<ExpItem>().exp = 10;
-                temp.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else if(key == 2 || key == 3) 
-            {
-                temp.GetComponent<ExpItem>().exp = 15;
-                temp.GetComponent<SpriteRenderer>().color = Color.green;
-            }
-            else if (key == 4 || key == 5)
-            {
-                temp.GetComponent<ExpItem>().exp = 20;
-                temp.GetComponent<SpriteRenderer>().color = Color.red;
-            }
-            temp.SetActive(true);
-            temp.transform.SetParent(null);
-            temp.transform.position = transform.position;
         }
         else if(89< num && num < 95)
         {
@@ -90,10 +90,11 @@ public class EnemyController : MonoBehaviour
             if (targetPool.Count > 0)
             {
                 GameObject temp = targetPool.Pop();
+                temp.SetActive(true);
+                temp.transform.SetParent(null);
+                temp.transform.position = transform.position;
             }
-            temp.SetActive(true);
-            temp.transform.SetParent(null);
-            temp.transform.position = transform.position;
+            
         }
         else if(94 < num && num < 100)
         {
@@ -102,10 +103,10 @@ public class EnemyController : MonoBehaviour
             if (targetPool.Count > 0)
             {
                 GameObject temp = targetPool.Pop();
+                temp.SetActive(true);
+                temp.transform.SetParent(null);
+                temp.transform.position = transform.position;
             }
-            temp.SetActive(true);
-            temp.transform.SetParent(null);
-            temp.transform.position = transform.position;
         }
     }
    

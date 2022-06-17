@@ -25,11 +25,11 @@ public class ThrowWeapon : MonoBehaviour
     }
 
     IEnumerator Shoot()
-    {   
+    {
         yield return new WaitForSeconds(0.02f);
         GameObject temp = Spawn();
         temp.SetActive(true);
-        if(audio.isPlaying == false)
+        if (audio.isPlaying == false)
         {
             audio.Play();
         }

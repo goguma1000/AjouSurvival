@@ -133,28 +133,26 @@ public class LevelUpChoice : MonoBehaviour
                     }
                     if (canAdd) randomNums.Add(temp);
                 }
-
-                for (int j = 0; j < randomNums.Count; j++)
-                {
-                    slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
-                    SetItemName(randomNums[j],j);
-
-                    if(randomNums[j] == 6)
-                    {
-                        SetItemText(randomNums[j],j);
-                    }
-                    else if(GameManager.instance.itemLevel[randomNums[j]] != 0)
-                    {
-                        SetItemText(randomNums[j],j);
-                    }
-                    else
-                    {
-                        SetItemInfo(randomNums[j],j);
-                    }
-                }
             }
         }
-        
+        for (int j = 0; j < randomNums.Count; j++)
+        {
+            slotImages[j].GetComponent<Image>().sprite = items[randomNums[j]];
+            SetItemName(randomNums[j], j);
+
+            if (randomNums[j] == 6)
+            {
+                SetItemText(randomNums[j], j);
+            }
+            else if (GameManager.instance.itemLevel[randomNums[j]] != 0)
+            {
+                SetItemText(randomNums[j], j);
+            }
+            else
+            {
+                SetItemInfo(randomNums[j], j);
+            }
+        }
     }
 
     private void SetItemText(int itemNum, int slotNum)
